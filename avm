@@ -29,6 +29,5 @@ fi
 if [ -z "$AVM_IN_CONTAINER" ]; then
   $CONTAINER_RUNTIME run --pull always --user "$(id -u):$(id -g)" --rm $AZURE_VOLUME -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v "$(pwd)":/src -w /src -e GITHUB_REPOSITORY -e GITHUB_REPOSITORY_OWNER mcr.microsoft.com/azterraform make "$1"
 else
-  echo Why?
   make "$1"
 fi
