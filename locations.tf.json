@@ -1646,6 +1646,28 @@
           "type": "Region"
         },
         {
+          "displayName": "South Central US STG",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/southcentralusstg",
+          "metadata": {
+            "geography": "Stage (US)",
+            "geographyGroup": "US",
+            "latitude": "29.4167",
+            "longitude": "-98.5",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/eastusstg",
+                "name": "eastusstg"
+              }
+            ],
+            "physicalLocation": "Texas",
+            "regionCategory": "Other",
+            "regionType": "Physical"
+          },
+          "name": "southcentralusstg",
+          "regionalDisplayName": "(US) South Central US STG",
+          "type": "Region"
+        },
+        {
           "displayName": "West Central US",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/westcentralus",
           "metadata": {
