@@ -3,7 +3,6 @@ variables {
   geography_filter = "United States"
 }
 
-
 run "cached" {
   command = apply
 
