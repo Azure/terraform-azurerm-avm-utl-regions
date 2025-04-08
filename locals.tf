@@ -1,5 +1,6 @@
 # These locals filter the API output based on the input variables.
 locals {
+  locations                           = var.use_cached_data ? local.cached_locations_list : local.live_locations_list
   locations_availability_zones_filter = var.availability_zones_filter ? [for v in local.locations_recommended_filter : v if v.zones != null] : local.locations_recommended_filter
   locations_filtered                  = local.locations_geography_group_filter
   locations_geography_filter          = var.geography_filter != null ? [for v in local.locations_availability_zones_filter : v if v.geography == var.geography_filter] : local.locations_availability_zones_filter
@@ -11,7 +12,6 @@ locals {
 locals {
   geo_groups              = distinct([for v in local.locations_filtered : v.geography_group])
   geos                    = distinct([for v in local.locations_filtered : v.geography])
-  locations               = var.use_cached_data ? local.cached_locations_list : local.live_locations_list
   regions_by_display_name = { for v in local.locations_filtered : v.display_name => v }
   regions_by_geography = {
     for geo in local.geos : geo => [

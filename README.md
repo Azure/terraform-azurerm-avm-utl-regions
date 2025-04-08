@@ -120,6 +120,7 @@ Description: A list of region objects subject to the filters supplied by input v
 - `geography` - The geography of the region.
 - `geography_group` - The geography group of the region.
 - `zones` - A list of the availability zones in the region. Will be empty if the region does not support zones.
+- `geo_code` - The geo code of the region. May be `null` if the region does not have a published geo code. Also known as a region short name.
 
 ### <a name="output_regions_by_display_name"></a> [regions\_by\_display\_name](#output\_regions\_by\_display\_name)
 

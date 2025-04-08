@@ -3,7 +3,6 @@ variables {
   zones_filter     = true
 }
 
-
 run "cached" {
   command = apply
 
