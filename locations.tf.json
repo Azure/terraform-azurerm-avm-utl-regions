@@ -1316,6 +1316,17 @@
           "type": "Region"
         },
         {
+          "displayName": "Indonesia",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/indonesia",
+          "metadata": {
+            "regionCategory": "Other",
+            "regionType": "Logical"
+          },
+          "name": "indonesia",
+          "regionalDisplayName": "Indonesia",
+          "type": "Region"
+        },
+        {
           "displayName": "Israel",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/israel",
           "metadata": {
@@ -1357,6 +1368,17 @@
           },
           "name": "korea",
           "regionalDisplayName": "Korea",
+          "type": "Region"
+        },
+        {
+          "displayName": "Mexico",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/mexico",
+          "metadata": {
+            "regionCategory": "Other",
+            "regionType": "Logical"
+          },
+          "name": "mexico",
+          "regionalDisplayName": "Mexico",
           "type": "Region"
         },
         {
@@ -1426,6 +1448,17 @@
           "type": "Region"
         },
         {
+          "displayName": "Spain",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/spain",
+          "metadata": {
+            "regionCategory": "Other",
+            "regionType": "Logical"
+          },
+          "name": "spain",
+          "regionalDisplayName": "Spain",
+          "type": "Region"
+        },
+        {
           "displayName": "Sweden",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/sweden",
           "metadata": {
@@ -1445,6 +1478,17 @@
           },
           "name": "switzerland",
           "regionalDisplayName": "Switzerland",
+          "type": "Region"
+        },
+        {
+          "displayName": "Taiwan",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/taiwan",
+          "metadata": {
+            "regionCategory": "Other",
+            "regionType": "Logical"
+          },
+          "name": "taiwan",
+          "regionalDisplayName": "Taiwan",
           "type": "Region"
         },
         {
