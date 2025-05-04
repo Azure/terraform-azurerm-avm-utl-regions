@@ -510,6 +510,37 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
+              "physicalZone": "indonesiacentral-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "indonesiacentral-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "indonesiacentral-az2"
+            }
+          ],
+          "displayName": "Indonesia Central",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/indonesiacentral",
+          "metadata": {
+            "geography": "Indonesia",
+            "geographyGroup": "Asia Pacific",
+            "latitude": "-6.2",
+            "longitude": "106.816666",
+            "pairedRegion": [],
+            "physicalLocation": "Jakarta",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "indonesiacentral",
+          "regionalDisplayName": "(Asia Pacific) Indonesia Central",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
               "physicalZone": "japaneast-az1"
             },
             {
@@ -540,6 +571,42 @@
           },
           "name": "japaneast",
           "regionalDisplayName": "(Asia Pacific) Japan East",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "japanwest-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "japanwest-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "japanwest-az2"
+            }
+          ],
+          "displayName": "Japan West",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/japanwest",
+          "metadata": {
+            "geography": "Japan",
+            "geographyGroup": "Asia Pacific",
+            "latitude": "34.6939",
+            "longitude": "135.5022",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/japaneast",
+                "name": "japaneast"
+              }
+            ],
+            "physicalLocation": "Osaka",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "japanwest",
+          "regionalDisplayName": "(Asia Pacific) Japan West",
           "type": "Region"
         },
         {
@@ -1572,28 +1639,6 @@
           },
           "name": "westus",
           "regionalDisplayName": "(US) West US",
-          "type": "Region"
-        },
-        {
-          "displayName": "Japan West",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/japanwest",
-          "metadata": {
-            "geography": "Japan",
-            "geographyGroup": "Asia Pacific",
-            "latitude": "34.6939",
-            "longitude": "135.5022",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/japaneast",
-                "name": "japaneast"
-              }
-            ],
-            "physicalLocation": "Osaka",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "japanwest",
-          "regionalDisplayName": "(Asia Pacific) Japan West",
           "type": "Region"
         },
         {
