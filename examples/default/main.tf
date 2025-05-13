@@ -5,10 +5,8 @@ terraform {
 }
 
 module "regions" {
-  source           = "../../"
+  source = "../../"
+
   enable_telemetry = var.enable_telemetry
 }
 
-output "regions" {
-  value = module.regions.regions
-}
