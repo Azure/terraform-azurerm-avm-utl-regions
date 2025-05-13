@@ -16,9 +16,10 @@ terraform {
 
 
 module "regions" {
-  source                    = "../../"
-  enable_telemetry          = var.enable_telemetry
+  source = "../../"
+
   availability_zones_filter = true
+  enable_telemetry          = var.enable_telemetry
   geography_filter          = "United States"
 }
 
@@ -28,10 +29,6 @@ resource "random_shuffle" "two_us_region_names_with_zones" {
   result_count = 2
 }
 
-output "two_us_regions_with_zones" {
-  value       = [for v in module.regions.regions : v if contains(random_shuffle.two_us_region_names_with_zones.result, v.name)]
-  description = "Outputs two random US regions with zones."
-}
 ```
 
 <!-- markdownlint-disable MD033 -->

@@ -9,9 +9,10 @@ terraform {
 }
 
 module "regions" {
-  source           = "../../"
-  use_cached_data  = true
+  source = "../../"
+
   enable_telemetry = var.enable_telemetry
+  use_cached_data  = true
 }
 
 resource "random_integer" "region_index" {
@@ -19,6 +20,3 @@ resource "random_integer" "region_index" {
   min = 0
 }
 
-output "random_region" {
-  value = module.regions.regions[random_integer.region_index.result]
-}
