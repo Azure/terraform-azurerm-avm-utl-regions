@@ -4,12 +4,12 @@ locals {
     for location in data.azapi_resource_action.locations[0].output.value : {
       display_name       = location.displayName
       geography          = location.metadata.geography
-      geography_group    = location.metadata.geographyGroup
+      geography_group    = lookup(location.metadata, "geographyGroup", null)
       name               = location.name
       paired_region_name = try(one(location.metadata.pairedRegion).name, null)
       recommended        = location.metadata.regionCategory == "Recommended"
       zones              = try([for zone in location.availabilityZoneMappings : tonumber(zone.logicalZone)], tolist(null))
       geo_code           = try(local.geo_codes_by_name[location.name], null)
-    } if location.metadata.regionType == "Physical"
+    } if location.metadata.regionType == "Physical" && contains(keys(location.metadata), "geographyGroup")
   ] : null
 }
