@@ -10,6 +10,6 @@ locals {
       recommended        = location.metadata.regionCategory == "Recommended"
       zones              = try([for zone in location.availabilityZoneMappings : tonumber(zone.logicalZone)], tolist(null))
       geo_code           = try(local.geo_codes_by_name[location.name], null)
-    } if location.metadata.regionType == "Physical" && contains(keys(location.metadata), "geographyGroup")
+    } if location.metadata.regionType == "Physical"
   ] : null
 }
