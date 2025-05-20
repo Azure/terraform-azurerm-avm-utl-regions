@@ -156,7 +156,13 @@ Description: A set of valid region names or display names subject to the filters
 
 ## Modules
 
-No modules.
+The following Modules are called:
+
+### <a name="module_cached_data"></a> [cached\_data](#module\_cached\_data)
+
+Source: ./modules/cached-data
+
+Version:
 
 <!-- markdownlint-disable-next-line MD041 -->
 ## Data Collection

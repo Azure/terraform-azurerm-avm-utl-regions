@@ -11,6 +11,9 @@ permissions:
   pull-requests: write
   id-token: write
 
+env:
+  LOCATIONS_CACHE: ./modules/cached-data/locations.tf.json
+
 jobs:
   update:
     environment: test
@@ -46,15 +49,15 @@ jobs:
 
       - name: update locations data
         run: |
-          cp locations.tf.json locations.tf.json.original
-          az rest --method GET --uri /subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/locations?api-version=2023-07-01 | jq '{ "locals": { "locations_cached": {"value": .value }}}' > locations.tf.json
+          cp ${{ env.LOCATIONS_CACHE }} ${{ env.LOCATIONS_CACHE }}.original
+          az rest --method GET --uri /subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/locations?api-version=2023-07-01 | jq '{ "locals": { "locations_cached": {"value": .value }}}' > ${{ env.LOCATIONS_CACHE }}
         working-directory: ${{ github.workspace }}
 
       - name: deep compare locations data
         run: |
-          if ! jd -set locations.tf.json.original locations.tf.json; then
-            echo "locations.tf.json has changed"
-            git add locations.tf.json
+          if ! jd -set ${{ env.LOCATIONS_CACHE }}.original ${{ env.LOCATIONS_CACHE }}; then
+            echo "${{ env.LOCATIONS_CACHE }} has changed"
+            git add ${{ env.LOCATIONS_CACHE }}
             echo UPDATED=1 >> "$GITHUB_ENV"
           fi
         working-directory: ${{ github.workspace }}

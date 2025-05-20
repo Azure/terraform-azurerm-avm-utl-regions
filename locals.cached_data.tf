@@ -1,7 +1,7 @@
 # Implement an anti-coprruption layer to transform the data from the Azure API into a format that is easier to work with in the rest of the module.
 locals {
   cached_locations_list = tolist([
-    for location in local.locations_cached.value : {
+    for location in module.cached_data.locations_cached.value : {
       display_name       = location.displayName
       geography          = location.metadata.geography
       geography_group    = lookup(location.metadata, "geographyGroup", null)
