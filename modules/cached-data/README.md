@@ -7,7 +7,9 @@ It is now in a submodule to enable mocking in tests.
 <!-- markdownlint-disable MD033 -->
 ## Requirements
 
-No requirements.
+The following requirements are needed by this module:
+
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 ## Providers
 
