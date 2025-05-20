@@ -10,8 +10,8 @@ locals {
 
 # These locals create maps of the regions based on different attributes.
 locals {
-  geo_groups              = distinct([for v in local.locations_filtered : v.geography_group])
-  geos                    = distinct([for v in local.locations_filtered : v.geography])
+  geo_groups              = distinct([for v in local.locations_filtered : v.geography_group if v.geography_group != null])
+  geos                    = distinct([for v in local.locations_filtered : v.geography if v.geography != null])
   regions_by_display_name = { for v in local.locations_filtered : v.display_name => v }
   regions_by_geography = {
     for geo in local.geos : geo => [
