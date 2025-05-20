@@ -34,7 +34,7 @@ The following outputs are exported:
 
 ### <a name="output_locations_cached"></a> [locations\_cached](#output\_locations\_cached)
 
-Description: n/a
+Description: The cached list of locations from the API. Output is a list of location objects under the `value` key.
 
 ## Modules
 
