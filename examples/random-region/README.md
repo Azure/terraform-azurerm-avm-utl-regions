@@ -6,6 +6,7 @@ This example shows how to select a region at random.
 ```hcl
 terraform {
   required_version = "~> 1.6"
+
   required_providers {
     random = {
       source  = "hashicorp/random"

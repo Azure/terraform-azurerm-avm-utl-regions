@@ -6,6 +6,7 @@ This example shows a more advanced scenario where you want to randomly pick two 
 ```hcl
 terraform {
   required_version = "~> 1.6"
+
   required_providers {
     random = {
       source  = "hashicorp/random"
