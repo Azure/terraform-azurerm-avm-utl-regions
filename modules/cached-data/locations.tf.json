@@ -1118,6 +1118,46 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
+              "physicalZone": "eastus2euap-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "eastus2euap-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "eastus2euap-az2"
+            },
+            {
+              "logicalZone": "4",
+              "physicalZone": "eastus2euap-az4"
+            }
+          ],
+          "displayName": "East US 2 EUAP",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/eastus2euap",
+          "metadata": {
+            "geography": "Canary (US)",
+            "geographyGroup": "US",
+            "latitude": "36.6681",
+            "longitude": "-78.3889",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/centraluseuap",
+                "name": "centraluseuap"
+              }
+            ],
+            "physicalLocation": "",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "eastus2euap",
+          "regionalDisplayName": "(US) East US 2 EUAP",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
               "physicalZone": "israelcentral-az1"
             },
             {
@@ -1800,46 +1840,6 @@
           },
           "name": "centraluseuap",
           "regionalDisplayName": "(US) Central US EUAP",
-          "type": "Region"
-        },
-        {
-          "availabilityZoneMappings": [
-            {
-              "logicalZone": "1",
-              "physicalZone": "eastus2euap-az1"
-            },
-            {
-              "logicalZone": "2",
-              "physicalZone": "eastus2euap-az3"
-            },
-            {
-              "logicalZone": "3",
-              "physicalZone": "eastus2euap-az2"
-            },
-            {
-              "logicalZone": "4",
-              "physicalZone": "eastus2euap-az4"
-            }
-          ],
-          "displayName": "East US 2 EUAP",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/eastus2euap",
-          "metadata": {
-            "geography": "Canary (US)",
-            "geographyGroup": "US",
-            "latitude": "36.6681",
-            "longitude": "-78.3889",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/centraluseuap",
-                "name": "centraluseuap"
-              }
-            ],
-            "physicalLocation": "",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "eastus2euap",
-          "regionalDisplayName": "(US) East US 2 EUAP",
           "type": "Region"
         },
         {
