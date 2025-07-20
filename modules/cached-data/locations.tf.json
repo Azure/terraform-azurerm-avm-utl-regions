@@ -42,42 +42,6 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
-              "physicalZone": "southcentralus-az1"
-            },
-            {
-              "logicalZone": "2",
-              "physicalZone": "southcentralus-az3"
-            },
-            {
-              "logicalZone": "3",
-              "physicalZone": "southcentralus-az2"
-            }
-          ],
-          "displayName": "South Central US",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/southcentralus",
-          "metadata": {
-            "geography": "United States",
-            "geographyGroup": "US",
-            "latitude": "29.4167",
-            "longitude": "-98.5",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/northcentralus",
-                "name": "northcentralus"
-              }
-            ],
-            "physicalLocation": "Texas",
-            "regionCategory": "Recommended",
-            "regionType": "Physical"
-          },
-          "name": "southcentralus",
-          "regionalDisplayName": "(US) South Central US",
-          "type": "Region"
-        },
-        {
-          "availabilityZoneMappings": [
-            {
-              "logicalZone": "1",
               "physicalZone": "westus2-az1"
             },
             {
@@ -747,6 +711,37 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
+              "physicalZone": "austriaeast-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "austriaeast-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "austriaeast-az2"
+            }
+          ],
+          "displayName": "Austria East",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/austriaeast",
+          "metadata": {
+            "geography": "Austria",
+            "geographyGroup": "Europe",
+            "latitude": "16.214834",
+            "longitude": "48.2201153",
+            "pairedRegion": [],
+            "physicalLocation": "Vienna",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "austriaeast",
+          "regionalDisplayName": "(Europe) Austria East",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
               "physicalZone": "francecentral-az1"
             },
             {
@@ -1112,6 +1107,46 @@
           },
           "name": "chilecentral",
           "regionalDisplayName": "(South America) Chile Central",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "eastus2euap-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "eastus2euap-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "eastus2euap-az2"
+            },
+            {
+              "logicalZone": "4",
+              "physicalZone": "eastus2euap-az4"
+            }
+          ],
+          "displayName": "East US 2 EUAP",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/eastus2euap",
+          "metadata": {
+            "geography": "Canary (US)",
+            "geographyGroup": "US",
+            "latitude": "36.6681",
+            "longitude": "-78.3889",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/centraluseuap",
+                "name": "centraluseuap"
+              }
+            ],
+            "physicalLocation": "",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "eastus2euap",
+          "regionalDisplayName": "(US) East US 2 EUAP",
           "type": "Region"
         },
         {
@@ -1715,6 +1750,42 @@
           "type": "Region"
         },
         {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "southcentralus-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "southcentralus-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "southcentralus-az2"
+            }
+          ],
+          "displayName": "South Central US",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/southcentralus",
+          "metadata": {
+            "geography": "United States",
+            "geographyGroup": "US",
+            "latitude": "29.4167",
+            "longitude": "-98.5",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/northcentralus",
+                "name": "northcentralus"
+              }
+            ],
+            "physicalLocation": "Texas",
+            "regionCategory": "Other",
+            "regionType": "Physical"
+          },
+          "name": "southcentralus",
+          "regionalDisplayName": "(US) South Central US",
+          "type": "Region"
+        },
+        {
           "displayName": "North Central US",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/northcentralus",
           "metadata": {
@@ -1800,46 +1871,6 @@
           },
           "name": "centraluseuap",
           "regionalDisplayName": "(US) Central US EUAP",
-          "type": "Region"
-        },
-        {
-          "availabilityZoneMappings": [
-            {
-              "logicalZone": "1",
-              "physicalZone": "eastus2euap-az1"
-            },
-            {
-              "logicalZone": "2",
-              "physicalZone": "eastus2euap-az3"
-            },
-            {
-              "logicalZone": "3",
-              "physicalZone": "eastus2euap-az2"
-            },
-            {
-              "logicalZone": "4",
-              "physicalZone": "eastus2euap-az4"
-            }
-          ],
-          "displayName": "East US 2 EUAP",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/eastus2euap",
-          "metadata": {
-            "geography": "Canary (US)",
-            "geographyGroup": "US",
-            "latitude": "36.6681",
-            "longitude": "-78.3889",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/centraluseuap",
-                "name": "centraluseuap"
-              }
-            ],
-            "physicalLocation": "",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "eastus2euap",
-          "regionalDisplayName": "(US) East US 2 EUAP",
           "type": "Region"
         },
         {
