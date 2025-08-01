@@ -1,12 +1,5 @@
 terraform {
   required_version = "~> 1.6"
-
-  required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.6"
-    }
-  }
 }
 
 
@@ -25,7 +18,6 @@ module "regions_recommended_regions_with_azs" {
   has_availability_zones = true
   has_pair               = true
   is_recommended         = true
-  recommended_filter     = false # disable legacy filter
-  region_filter          = ["uksouth", "Sweden Central"]
+  recommended_filter     = false                                   # disable legacy filter
+  region_filter          = ["uksouth", "Sweden Central", "ukwest"] # Will not return UK West due to AZ requirement
 }
-
