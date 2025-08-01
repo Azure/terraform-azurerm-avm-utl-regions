@@ -51,3 +51,5 @@ examples/*/policy
 
 # PR update files are renamed to .original
 *.original
+*.mptfbackup
+.avm
