@@ -51,7 +51,9 @@ The following input variables are optional (have default values):
 
 ### <a name="input_availability_zones_filter"></a> [availability\_zones\_filter](#input\_availability\_zones\_filter)
 
-Description: If true, the module will only return regions that have availability zones.
+Description: DEPRECATED: Use `var.has_availability_zones` instead.
+
+If true, the module will only return regions that have availability zones.
 
 Type: `bool`
 
@@ -83,15 +85,51 @@ Type: `string`
 
 Default: `null`
 
+### <a name="input_has_availability_zones"></a> [has\_availability\_zones](#input\_has\_availability\_zones)
+
+Description: `null` means no filter is applied, `true` means only regions with availability zones are returned, and `false` means only regions without availability zones are returned.
+
+Type: `bool`
+
+Default: `null`
+
+### <a name="input_has_pair"></a> [has\_pair](#input\_has\_pair)
+
+Description: `null` means no filter is applied, `true` means only regions with a paired region are returned, and `false` means only regions without a paired region are returned.
+
+Type: `bool`
+
+Default: `null`
+
+### <a name="input_is_recommended"></a> [is\_recommended](#input\_is\_recommended)
+
+Description: `null` means no filter is applied, `true` means only regions that are recommended are returned, and `false` means only regions that are not recommended are returned.
+
+NOTE: Set the legacy `recommended_filter` variable to `false` to ensure this works as expected.
+
+Type: `bool`
+
+Default: `null`
+
 ### <a name="input_recommended_filter"></a> [recommended\_filter](#input\_recommended\_filter)
 
-Description: If true, the module will only return regions that are have the category set to `Recommended` by the locations API.  
+Description: DEPRECATED: Use `var.is_recommended` instead.
+
+If true, the module will only return regions that are have the category set to `Recommended` by the locations API.  
 This is default `true` as several regions are not available for general deployment and must be explicitly made available via support ticket.  
 Enabling these regions by default may lead to deployment failures.
 
 Type: `bool`
 
 Default: `true`
+
+### <a name="input_region_filter"></a> [region\_filter](#input\_region\_filter)
+
+Description: A set of region names (or display names) to filter the output by. If `null`, no filter is applied.
+
+Type: `set(string)`
+
+Default: `null`
 
 ### <a name="input_use_cached_data"></a> [use\_cached\_data](#input\_use\_cached\_data)
 
