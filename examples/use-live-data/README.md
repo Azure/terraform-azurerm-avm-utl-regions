@@ -18,7 +18,6 @@ module "regions" {
   enable_telemetry = var.enable_telemetry
   use_cached_data  = false
 }
-
 ```
 
 <!-- markdownlint-disable MD033 -->

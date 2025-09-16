@@ -15,14 +15,6 @@ locals {
   locations_region_filter = var.region_filter != null ? toset([for v in local.locations : v.name if contains(var.region_filter, v.name) || contains(var.region_filter, v.display_name)]) : local.locations_all_names
 }
 
-# Deprecated bool filters that did not use tri-state logic (true/false/null).
-locals {
-  # A set of location names that have availability zones. (now deprecated, use `var.has_availability_zones` instead)
-  locations_availability_zones_filter = var.availability_zones_filter ? toset([for v in local.locations : v.name if v.zones != null]) : local.locations_all_names
-  # A set of location names that match the recommended filter.
-  locations_recommended_filter = var.recommended_filter ? toset([for v in local.locations : v.name if v.recommended]) : local.locations_all_names
-}
-
 # has paired regions can be set to true, false or null.
 locals {
   locations_final_paired_region_filter  = var.has_pair == null ? local.locations_all_names : var.has_pair ? local.locations_has_paired_region_filter : local.locations_no_has_paired_region_filter
@@ -50,10 +42,8 @@ locals {
   # A list of locations that match the filtered names.
   locations_filtered = [for v in local.locations : v if contains(local.locations_filtered_names, v.name)]
   locations_filtered_names = setintersection(
-    local.locations_availability_zones_filter,
     local.locations_geography_filter,
     local.locations_geography_group_filter,
-    local.locations_recommended_filter,
     local.locations_final_paired_region_filter,
     local.locations_final_availability_zones_filter,
     local.locations_final_is_recommended_filter,
