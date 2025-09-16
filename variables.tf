@@ -1,13 +1,3 @@
-variable "availability_zones_filter" {
-  type        = bool
-  default     = false
-  description = <<DESCRIPTION
-DEPRECATED: Use `var.has_availability_zones` instead.
-
-If true, the module will only return regions that have availability zones.
-DESCRIPTION
-}
-
 variable "enable_telemetry" {
   type        = bool
   default     = true
@@ -58,18 +48,6 @@ variable "is_recommended" {
 `null` means no filter is applied, `true` means only regions that are recommended are returned, and `false` means only regions that are not recommended are returned.
 
 NOTE: Set the legacy `recommended_filter` variable to `false` to ensure this works as expected.
-DESCRIPTION
-}
-
-variable "recommended_filter" {
-  type        = bool
-  default     = true
-  description = <<DESCRIPTION
-DEPRECATED: Use `var.is_recommended` instead.
-
-If true, the module will only return regions that are have the category set to `Recommended` by the locations API.
-This is default `true` as several regions are not available for general deployment and must be explicitly made available via support ticket.
-Enabling these regions by default may lead to deployment failures.
 DESCRIPTION
 }
 

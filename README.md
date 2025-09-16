@@ -49,16 +49,6 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### <a name="input_availability_zones_filter"></a> [availability\_zones\_filter](#input\_availability\_zones\_filter)
-
-Description: DEPRECATED: Use `var.has_availability_zones` instead.
-
-If true, the module will only return regions that have availability zones.
-
-Type: `bool`
-
-Default: `false`
-
 ### <a name="input_enable_telemetry"></a> [enable\_telemetry](#input\_enable\_telemetry)
 
 Description: This variable controls whether or not telemetry is enabled for the module.  
@@ -110,18 +100,6 @@ NOTE: Set the legacy `recommended_filter` variable to `false` to ensure this wor
 Type: `bool`
 
 Default: `null`
-
-### <a name="input_recommended_filter"></a> [recommended\_filter](#input\_recommended\_filter)
-
-Description: DEPRECATED: Use `var.is_recommended` instead.
-
-If true, the module will only return regions that are have the category set to `Recommended` by the locations API.  
-This is default `true` as several regions are not available for general deployment and must be explicitly made available via support ticket.  
-Enabling these regions by default may lead to deployment failures.
-
-Type: `bool`
-
-Default: `true`
 
 ### <a name="input_region_filter"></a> [region\_filter](#input\_region\_filter)
 
