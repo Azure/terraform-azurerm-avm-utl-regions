@@ -46,8 +46,6 @@ variable "is_recommended" {
   default     = null
   description = <<DESCRIPTION
 `null` means no filter is applied, `true` means only regions that are recommended are returned, and `false` means only regions that are not recommended are returned.
-
-NOTE: Set the legacy `recommended_filter` variable to `false` to ensure this works as expected.
 DESCRIPTION
 }
 
