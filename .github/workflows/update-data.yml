@@ -27,7 +27,7 @@ jobs:
 
       - name: install jd
         run: |
-          go install github.com/josephburnett/jd@v1.7.1
+          go install github.com/josephburnett/jd/v2/jd@v2.3.0
 
       - uses: azure/login@v2
         with:
