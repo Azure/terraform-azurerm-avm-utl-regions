@@ -1634,28 +1634,6 @@
           "type": "Region"
         },
         {
-          "displayName": "Brazil US",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/brazilus",
-          "metadata": {
-            "geography": "Brazil",
-            "geographyGroup": "South America",
-            "latitude": "0",
-            "longitude": "0",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/brazilsoutheast",
-                "name": "brazilsoutheast"
-              }
-            ],
-            "physicalLocation": "",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "brazilus",
-          "regionalDisplayName": "(South America) Brazil US",
-          "type": "Region"
-        },
-        {
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
