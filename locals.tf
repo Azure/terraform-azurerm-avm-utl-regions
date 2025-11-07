@@ -1,15 +1,15 @@
 # locations is the source data set, either from a cache or live data.
 locals {
   locations = [for loc in local.locations_merged : {
-    display_name        = loc.display_name
-    geography           = loc.geography
-    geography_group     = loc.geography_group
-    name                = loc.name
-    paired_region_name  = loc.paired_region_name
-    recommended         = loc.recommended
-    zones               = loc.zones
-    geo_code            = try(local.geo_codes_by_name[loc.name], null)
-    short_name          = join("", [for word in split(" ", loc.display_name) : lower(substr(word, 0, 1))])
+    display_name       = loc.display_name
+    geography          = loc.geography
+    geography_group    = loc.geography_group
+    name               = loc.name
+    paired_region_name = loc.paired_region_name
+    recommended        = loc.recommended
+    zones              = loc.zones
+    geo_code           = try(local.geo_codes_by_name[loc.name], null)
+    short_name         = join("", [for word in split(" ", loc.display_name) : lower(substr(word, 0, 1))])
   }]
   locations_merged = var.use_cached_data ? local.cached_locations_list : local.live_locations_list
 }
