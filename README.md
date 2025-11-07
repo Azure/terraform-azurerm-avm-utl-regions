@@ -59,6 +59,17 @@ Type: `bool`
 
 Default: `true`
 
+### <a name="input_geo_code_fallback_to_calculated_enabled"></a> [geo\_code\_fallback\_to\_calculated\_enabled](#input\_geo\_code\_fallback\_to\_calculated\_enabled)
+
+Description: If true, the module will fallback to using a calculated geo code if a geo code is not found in the predefined list.  
+If false, the module will only use predefined geo codes and will set the geo code to null if not found.
+
+This can be useful if the geo code is use in naming conventions only, but should may not work for private endpoint usage.
+
+Type: `bool`
+
+Default: `true`
+
 ### <a name="input_geography_filter"></a> [geography\_filter](#input\_geography\_filter)
 
 Description: If set, the module will only return regions that match the specified geography.
