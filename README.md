@@ -59,17 +59,6 @@ Type: `bool`
 
 Default: `true`
 
-### <a name="input_geo_code_fallback_to_calculated_enabled"></a> [geo\_code\_fallback\_to\_calculated\_enabled](#input\_geo\_code\_fallback\_to\_calculated\_enabled)
-
-Description: If true, the module will fallback to using a calculated geo code if a geo code is not found in the predefined list.  
-If false, the module will only use predefined geo codes and will set the geo code to null if not found.
-
-This can be useful if the geo code is use in naming conventions only, but should may not work for private endpoint usage.
-
-Type: `bool`
-
-Default: `true`
-
 ### <a name="input_geography_filter"></a> [geography\_filter](#input\_geography\_filter)
 
 Description: If set, the module will only return regions that match the specified geography.
@@ -149,6 +138,7 @@ Description: A list of region objects subject to the filters supplied by input v
 - `geography_group` - The geography group of the region.
 - `zones` - A list of the availability zones in the region. Will be empty if the region does not support zones.
 - `geo_code` - The geo code of the region. May be `null` if the region does not have a published geo code. Also known as a region short name.
+- `short_name` - A calculated short name for the region, derived from the initials of the display name. This is not an official geo code and is provided for convenience where no geo code is available, but the geo code is used in resource naming.
 
 ### <a name="output_regions_by_display_name"></a> [regions\_by\_display\_name](#output\_regions\_by\_display\_name)
 
