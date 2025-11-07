@@ -1,12 +1,5 @@
 # locations is the source data set, either from a cache or live data.
 locals {
-  geo_codes = {
-    for loc in local.locations_merged : loc.name => {
-      geo_code            = try(local.geo_codes_by_name[loc.name], null)
-      geo_code_calculated = join("", [for word in split(" ", loc.display_name) : lower(substr(word, 0, 1))])
-      geo_code_found      = try(local.geo_codes_by_name[loc.name], null) != null
-    }
-  }
   locations = [for loc in local.locations_merged : {
     display_name        = loc.display_name
     geography           = loc.geography
@@ -15,9 +8,8 @@ locals {
     paired_region_name  = loc.paired_region_name
     recommended         = loc.recommended
     zones               = loc.zones
-    geo_code            = coalesce(local.geo_codes[loc.name].geo_code, var.geo_code_fallback_to_calculated_enabled ? local.geo_codes[loc.name].geo_code_calculated : null)
-    geo_code_calculated = local.geo_codes[loc.name].geo_code_calculated
-    geo_code_found      = local.geo_codes[loc.name].geo_code_found
+    geo_code            = try(local.geo_codes_by_name[loc.name], null)
+    short_name          = join("", [for word in split(" ", loc.display_name) : lower(substr(word, 0, 1))])
   }]
   locations_merged = var.use_cached_data ? local.cached_locations_list : local.live_locations_list
 }
