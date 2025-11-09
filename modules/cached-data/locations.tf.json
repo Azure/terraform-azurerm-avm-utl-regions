@@ -222,42 +222,6 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
-              "physicalZone": "uksouth-az1"
-            },
-            {
-              "logicalZone": "2",
-              "physicalZone": "uksouth-az3"
-            },
-            {
-              "logicalZone": "3",
-              "physicalZone": "uksouth-az2"
-            }
-          ],
-          "displayName": "UK South",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/uksouth",
-          "metadata": {
-            "geography": "United Kingdom",
-            "geographyGroup": "Europe",
-            "latitude": "50.941",
-            "longitude": "-0.799",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/ukwest",
-                "name": "ukwest"
-              }
-            ],
-            "physicalLocation": "London",
-            "regionCategory": "Recommended",
-            "regionType": "Physical"
-          },
-          "name": "uksouth",
-          "regionalDisplayName": "(Europe) UK South",
-          "type": "Region"
-        },
-        {
-          "availabilityZoneMappings": [
-            {
-              "logicalZone": "1",
               "physicalZone": "westeurope-az1"
             },
             {
@@ -288,6 +252,42 @@
           },
           "name": "westeurope",
           "regionalDisplayName": "(Europe) West Europe",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "uksouth-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "uksouth-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "uksouth-az2"
+            }
+          ],
+          "displayName": "UK South",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/uksouth",
+          "metadata": {
+            "geography": "United Kingdom",
+            "geographyGroup": "UK",
+            "latitude": "50.941",
+            "longitude": "-0.799",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/ukwest",
+                "name": "ukwest"
+              }
+            ],
+            "physicalLocation": "London",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "uksouth",
+          "regionalDisplayName": "(UK) UK South",
           "type": "Region"
         },
         {
@@ -691,8 +691,8 @@
           "metadata": {
             "geography": "Austria",
             "geographyGroup": "Europe",
-            "latitude": "16.214834",
-            "longitude": "48.2201153",
+            "latitude": "48.2092056",
+            "longitude": "16.3727779",
             "pairedRegion": [],
             "physicalLocation": "Vienna",
             "regionCategory": "Recommended",
@@ -700,6 +700,37 @@
           },
           "name": "austriaeast",
           "regionalDisplayName": "(Europe) Austria East",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "belgiumcentral-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "belgiumcentral-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "belgiumcentral-az2"
+            }
+          ],
+          "displayName": "Belgium Central",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/belgiumcentral",
+          "metadata": {
+            "geography": "Belgium",
+            "geographyGroup": "Europe",
+            "latitude": "50.84553528",
+            "longitude": "4.355707169",
+            "pairedRegion": [],
+            "physicalLocation": "Brussels",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "belgiumcentral",
+          "regionalDisplayName": "(Europe) Belgium Central",
           "type": "Region"
         },
         {
@@ -1634,28 +1665,6 @@
           "type": "Region"
         },
         {
-          "displayName": "Brazil US",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/brazilus",
-          "metadata": {
-            "geography": "Brazil",
-            "geographyGroup": "South America",
-            "latitude": "0",
-            "longitude": "0",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/brazilsoutheast",
-                "name": "brazilsoutheast"
-              }
-            ],
-            "physicalLocation": "",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "brazilus",
-          "regionalDisplayName": "(South America) Brazil US",
-          "type": "Region"
-        },
-        {
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
@@ -2204,28 +2213,6 @@
           "type": "Region"
         },
         {
-          "displayName": "UK West",
-          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/ukwest",
-          "metadata": {
-            "geography": "United Kingdom",
-            "geographyGroup": "Europe",
-            "latitude": "53.427",
-            "longitude": "-3.084",
-            "pairedRegion": [
-              {
-                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/uksouth",
-                "name": "uksouth"
-              }
-            ],
-            "physicalLocation": "Cardiff",
-            "regionCategory": "Other",
-            "regionType": "Physical"
-          },
-          "name": "ukwest",
-          "regionalDisplayName": "(Europe) UK West",
-          "type": "Region"
-        },
-        {
           "displayName": "UAE Central",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/uaecentral",
           "metadata": {
@@ -2267,6 +2254,28 @@
           },
           "name": "brazilsoutheast",
           "regionalDisplayName": "(South America) Brazil Southeast",
+          "type": "Region"
+        },
+        {
+          "displayName": "UK West",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/ukwest",
+          "metadata": {
+            "geography": "United Kingdom",
+            "geographyGroup": "UK",
+            "latitude": "53.427",
+            "longitude": "-3.084",
+            "pairedRegion": [
+              {
+                "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/uksouth",
+                "name": "uksouth"
+              }
+            ],
+            "physicalLocation": "Cardiff",
+            "regionCategory": "Other",
+            "regionType": "Physical"
+          },
+          "name": "ukwest",
+          "regionalDisplayName": "(UK) UK West",
           "type": "Region"
         }
       ]
