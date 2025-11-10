@@ -67,11 +67,27 @@ Type: `string`
 
 Default: `null`
 
+### <a name="input_geography_filters"></a> [geography\_filters](#input\_geography\_filters)
+
+Description: If set, the module will only return regions that match any of the specified geographies.
+
+Type: `set(string)`
+
+Default: `null`
+
 ### <a name="input_geography_group_filter"></a> [geography\_group\_filter](#input\_geography\_group\_filter)
 
 Description: If set, the module will only return regions that match the specified geography group.
 
 Type: `string`
+
+Default: `null`
+
+### <a name="input_geography_group_filters"></a> [geography\_group\_filters](#input\_geography\_group\_filters)
+
+Description: If set, the module will only return regions that match any of the specified geography groups.
+
+Type: `set(string)`
 
 Default: `null`
 
