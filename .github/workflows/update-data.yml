@@ -50,7 +50,7 @@ jobs:
       - name: update locations data
         run: |
           cp ${{ env.LOCATIONS_CACHE }} ${{ env.LOCATIONS_CACHE }}.original
-          az rest --method GET --uri /subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/locations?api-version=2023-07-01 | jq '{ "locals": { "locations_cached": {"value": .value }}}' > ${{ env.LOCATIONS_CACHE }}
+          az rest --method GET --uri /subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/locations?api-version=2023-07-01 | jq '{ "locals": { "locations_cached": {"value": .value | sort_by(.name) }}}' > ${{ env.LOCATIONS_CACHE }}
         working-directory: ${{ github.workspace }}
 
       - name: deep compare locations data
