@@ -251,46 +251,6 @@ run "all_filters_relaxed_match" {
   }
 }
 
-run "deprecated_filters_with_new_filters" {
-  command = apply
-
-  variables {
-    # Deprecated filters
-    availability_zones_filter = true
-    recommended_filter        = true
-    # New filters
-    geography_filter       = "United States"
-    has_availability_zones = null # Should not interfere with deprecated filter
-    is_recommended         = null # Should not interfere with deprecated filter
-    region_filter          = ["eastus", "westus"]
-  }
-
-  assert {
-    condition     = length(output.regions) == 1
-    error_message = "Should work with mix of deprecated and new filters"
-  }
-
-  assert {
-    condition     = output.regions[0].name == "eastus"
-    error_message = "Should return eastus (US + zones via deprecated filter + recommended via deprecated filter)"
-  }
-
-  assert {
-    condition     = output.regions[0].geography == "United States"
-    error_message = "Should have geography 'United States'"
-  }
-
-  assert {
-    condition     = output.regions[0].zones != null && length(output.regions[0].zones) > 0
-    error_message = "Should have availability zones (deprecated filter)"
-  }
-
-  assert {
-    condition     = output.regions[0].recommended == true
-    error_message = "Should be recommended (deprecated filter)"
-  }
-}
-
 run "all_filters_null_should_return_all" {
   command = apply
 
@@ -301,9 +261,6 @@ run "all_filters_null_should_return_all" {
     has_pair               = null
     is_recommended         = null
     region_filter          = null
-    # Deprecated filters should use defaults that don't restrict
-    availability_zones_filter = false # Default - doesn't restrict when false
-    recommended_filter        = false # Set to false so it doesn't restrict
   }
 
   assert {
