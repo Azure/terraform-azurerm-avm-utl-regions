@@ -53,3 +53,6 @@ examples/*/policy
 *.original
 *.mptfbackup
 .avm
+
+# Other
+AzureBackupGeoCodeMappings.json

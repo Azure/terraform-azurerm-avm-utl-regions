@@ -202,37 +202,3 @@ run "has_availability_zones_null" {
     error_message = "Should contain all regions when filter is null"
   }
 }
-
-# Test deprecated availability_zones_filter for backward compatibility
-run "deprecated_availability_zones_filter_true" {
-  command = apply
-
-  variables {
-    availability_zones_filter = true
-    has_availability_zones    = null # Should not interfere
-  }
-
-  assert {
-    condition     = length(output.regions) == 2
-    error_message = "Deprecated filter should still work: return regions with zones"
-  }
-
-  assert {
-    condition     = alltrue([for r in output.regions : r.zones != null && length(r.zones) > 0])
-    error_message = "All returned regions should have availability zones (deprecated filter)"
-  }
-}
-
-run "deprecated_availability_zones_filter_false" {
-  command = apply
-
-  variables {
-    availability_zones_filter = false
-    has_availability_zones    = null # Should not interfere
-  }
-
-  assert {
-    condition     = length(output.regions) == 4
-    error_message = "Deprecated filter false should return all regions"
-  }
-}

@@ -205,37 +205,3 @@ run "is_recommended_null" {
     error_message = "Should contain all regions when filter is null"
   }
 }
-
-# Test deprecated recommended_filter for backward compatibility
-run "deprecated_recommended_filter_true" {
-  command = apply
-
-  variables {
-    recommended_filter = true
-    is_recommended     = null # Should not interfere
-  }
-
-  assert {
-    condition     = length(output.regions) == 2
-    error_message = "Deprecated filter should still work: return recommended regions"
-  }
-
-  assert {
-    condition     = alltrue([for r in output.regions : r.recommended == true])
-    error_message = "All returned regions should be recommended (deprecated filter)"
-  }
-}
-
-run "deprecated_recommended_filter_false" {
-  command = apply
-
-  variables {
-    recommended_filter = false
-    is_recommended     = null # Should not interfere
-  }
-
-  assert {
-    condition     = length(output.regions) == 4
-    error_message = "Deprecated filter false should return all regions"
-  }
-}

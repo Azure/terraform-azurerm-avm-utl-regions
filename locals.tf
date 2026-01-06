@@ -21,7 +21,7 @@ locals {
   # A set of location names that match the geography filter.
   locations_geography_filter = var.geography_filter != null ? toset([for v in local.locations : v.name if v.geography == var.geography_filter]) : local.locations_all_names
   # Folks can now specify multiple geographies or geography groups to filter by.
-  locations_geography_filters = var.geography_group_filters != null ? toset([for v in local.locations : v.name if contains(var.geography_filters, v.geography)]) : local.locations_all_names
+  locations_geography_filters = var.geography_filters != null ? toset([for v in local.locations : v.name if contains(var.geography_filters, v.geography)]) : local.locations_all_names
   # A set of location names that match the geography group filter.
   locations_geography_group_filter  = var.geography_group_filter != null ? toset([for v in local.locations : v.name if v.geography_group == var.geography_group_filter]) : local.locations_all_names
   locations_geography_group_filters = var.geography_group_filters != null ? toset([for v in local.locations : v.name if contains(var.geography_group_filters, v.geography_group)]) : local.locations_all_names
