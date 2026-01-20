@@ -1,6 +1,6 @@
 variables {
   enable_telemetry = false
-  zones_filter     = true
+  has_availability_zones = true
 }
 
 run "cached" {

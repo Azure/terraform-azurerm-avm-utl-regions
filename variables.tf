@@ -69,7 +69,15 @@ variable "region_filter" {
   type        = set(string)
   default     = null
   description = <<DESCRIPTION
-A set of region names (or display names) to filter the output by. If `null`, no filter is applied.
+An inclusive set of region names (or display names) to filter the output by. If `null`, no filter is applied.
+DESCRIPTION
+}
+
+variable "region_name_regex" {
+  type        = string
+  default     = null
+  description = <<DESCRIPTION
+If set, the module will only return regions where the region name matches the specified regular expression.
 DESCRIPTION
 }
 
