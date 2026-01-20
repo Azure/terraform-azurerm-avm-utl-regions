@@ -117,9 +117,17 @@ Default: `null`
 
 ### <a name="input_region_filter"></a> [region\_filter](#input\_region\_filter)
 
-Description: A set of region names (or display names) to filter the output by. If `null`, no filter is applied.
+Description: An inclusive set of region names (or display names) to filter the output by. If `null`, no filter is applied.
 
 Type: `set(string)`
+
+Default: `null`
+
+### <a name="input_region_name_regex"></a> [region\_name\_regex](#input\_region\_name\_regex)
+
+Description: If set, the module will only return regions where the region name matches the specified regular expression.
+
+Type: `string`
 
 Default: `null`
 
