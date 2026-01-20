@@ -24,6 +24,5 @@ run "live_all" {
   command = apply
   variables {
     use_cached_data    = false
-    recommended_filter = false
   }
 }
