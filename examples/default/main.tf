@@ -6,7 +6,8 @@ terraform {
 }
 
 module "regions" {
-  source           = "../../"
+  source = "../../"
+
   enable_telemetry = var.enable_telemetry
 }
 
