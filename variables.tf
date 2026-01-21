@@ -78,7 +78,26 @@ variable "region_name_regex" {
   default     = null
   description = <<DESCRIPTION
 If set, the module will only return regions where the region name matches the specified regular expression.
+The default match mode is `match`, which means the region name must match the regex.
+You can change this behavior to `not_match` by setting the `region_name_regex_mode` variable.
 DESCRIPTION
+}
+
+variable "region_name_regex_mode" {
+  type        = string
+  default     = "match"
+  description = <<DESCRIPTION
+Specifies the regex mode to use when filtering by `region_name_regex`.
+
+- `match`: The region name must match the regex.
+- `not_match`: The region name must not match the regex.
+DESCRIPTION
+  nullable    = false
+
+  validation {
+    condition     = contains(["match", "not_match"], var.region_name_regex_mode)
+    error_message = "region_name_regex_mode must be either 'match' or 'not_match'."
+  }
 }
 
 variable "use_cached_data" {
