@@ -9,10 +9,14 @@ locals {
   # A set of location names that match the geography group filter.
   locations_geography_group_filter  = var.geography_group_filter != null ? toset([for v in local.locations : v.name if v.geography_group == var.geography_group_filter]) : local.locations_all_names
   locations_geography_group_filters = var.geography_group_filters != null ? toset([for v in local.locations : v.name if contains(var.geography_group_filters, v.geography_group)]) : local.locations_all_names
-  # Filter name by regex
-  locations_name_regex_filter = var.region_name_regex != null ? toset([for v in local.locations : v.name if can(regex(var.region_name_regex, v.name))]) : local.locations_all_names
   # Filter by region names or display names.
   locations_region_filter = var.region_filter != null ? toset([for v in local.locations : v.name if contains(var.region_filter, v.name) || contains(var.region_filter, v.display_name)]) : local.locations_all_names
+}
+
+# regex filtering can be either match or not match.
+locals {
+  locations_final_name_regex_filter = var.region_name_regex_mode == "match" ? local.locations_name_regex_filter : setsubtract(local.locations_all_names, local.locations_name_regex_filter)
+  locations_name_regex_filter       = var.region_name_regex != null ? toset([for v in local.locations : v.name if can(regex(var.region_name_regex, v.name))]) : local.locations_all_names
 }
 
 # has paired regions can be set to true, false or null.
@@ -43,13 +47,13 @@ locals {
   locations_filtered = [for v in local.locations : v if contains(local.locations_filtered_names, v.name)]
   locations_filtered_names = setintersection(
     local.locations_geography_filter,
-    local.locations_geography_group_filter,
     local.locations_geography_filters,
+    local.locations_geography_group_filter,
     local.locations_geography_group_filters,
+    local.locations_region_filter,
+    local.locations_final_name_regex_filter,
     local.locations_final_paired_region_filter,
     local.locations_final_availability_zones_filter,
     local.locations_final_is_recommended_filter,
-    local.locations_region_filter,
-    local.locations_name_regex_filter,
   )
 }
