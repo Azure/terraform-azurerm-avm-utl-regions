@@ -479,6 +479,37 @@
           "availabilityZoneMappings": [
             {
               "logicalZone": "1",
+              "physicalZone": "denmarkeast-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "denmarkeast-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "denmarkeast-az2"
+            }
+          ],
+          "displayName": "Denmark East",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/denmarkeast",
+          "metadata": {
+            "geography": "Denmark",
+            "geographyGroup": "Europe",
+            "latitude": "55.67594",
+            "longitude": "12.56553",
+            "pairedRegion": [],
+            "physicalLocation": "Copenhagen",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "denmarkeast",
+          "regionalDisplayName": "(Europe) Denmark East",
+          "type": "Region"
+        },
+        {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
               "physicalZone": "eastasia-az1"
             },
             {
