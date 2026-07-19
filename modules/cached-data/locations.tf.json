@@ -887,6 +887,37 @@
           "type": "Region"
         },
         {
+          "availabilityZoneMappings": [
+            {
+              "logicalZone": "1",
+              "physicalZone": "indiasouthcentral-az1"
+            },
+            {
+              "logicalZone": "2",
+              "physicalZone": "indiasouthcentral-az3"
+            },
+            {
+              "logicalZone": "3",
+              "physicalZone": "indiasouthcentral-az2"
+            }
+          ],
+          "displayName": "India South Central",
+          "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/indiasouthcentral",
+          "metadata": {
+            "geography": "India",
+            "geographyGroup": "Asia Pacific",
+            "latitude": "17.36599922",
+            "longitude": "78.47599792",
+            "pairedRegion": [],
+            "physicalLocation": "Hyderabad",
+            "regionCategory": "Recommended",
+            "regionType": "Physical"
+          },
+          "name": "indiasouthcentral",
+          "regionalDisplayName": "(Asia Pacific) India South Central",
+          "type": "Region"
+        },
+        {
           "displayName": "Indonesia",
           "id": "/subscriptions/2a8527ca-5340-49aa-8931-ea03669451a0/locations/indonesia",
           "metadata": {
