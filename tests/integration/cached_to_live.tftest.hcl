@@ -23,6 +23,6 @@ run "cached_all" {
 run "live_all" {
   command = apply
   variables {
-    use_cached_data    = false
+    use_cached_data = false
   }
 }
