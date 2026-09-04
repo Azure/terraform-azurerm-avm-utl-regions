@@ -17,7 +17,6 @@ module "regions" {
 
   enable_telemetry = var.enable_telemetry
 }
-
 ```
 
 <!-- markdownlint-disable MD033 -->
