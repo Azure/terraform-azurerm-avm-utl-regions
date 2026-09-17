@@ -19,7 +19,7 @@ terraform {
 module "regions" {
   source = "../../"
 
-  enable_telemetry       = var.enable_telemetry
+  enable_telemetry       = false
   geography_filter       = "United States"
   has_availability_zones = true
 }

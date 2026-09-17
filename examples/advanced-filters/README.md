@@ -12,6 +12,7 @@ terraform {
 module "regions_not_recommended_regions_without_azs" {
   source = "../../"
 
+  enable_telemetry       = false
   has_availability_zones = false
   is_recommended         = false
 }
@@ -19,7 +20,7 @@ module "regions_not_recommended_regions_without_azs" {
 module "regions_recommended_regions_with_azs" {
   source = "../../"
 
-  enable_telemetry       = var.enable_telemetry
+  enable_telemetry       = false
   has_availability_zones = true
   has_pair               = true
   is_recommended         = true                                    # disable legacy filter
