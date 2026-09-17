@@ -19,7 +19,7 @@ terraform {
 module "regions" {
   source = "../../"
 
-  enable_telemetry = var.enable_telemetry
+  enable_telemetry = false
   use_cached_data  = true
 }
 
