@@ -19,7 +19,7 @@ terraform {
 module "regions" {
   source = "../../"
 
-  enable_telemetry       = false
+  enable_telemetry       = var.enable_telemetry
   geography_filter       = "United States"
   has_availability_zones = true
 }
@@ -62,7 +62,7 @@ If it is set to false, then no telemetry will be collected.
 
 Type: `bool`
 
-Default: `true`
+Default: `false`
 
 ## Outputs
 
