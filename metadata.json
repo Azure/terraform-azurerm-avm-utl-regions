@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-verified-modules-tools/main/src/Avm.Authoring/Resources/Schemas/v1/avm-module-metadata.schema.json",
+  "moduleDisplayName": "Azure Regions Data",
+  "moduleDescription": "AVM utility Module for Azure Regions Data",
+  "canonicalType": "regions",
+  "owners": [
+    "jaredfholgate"
+  ]
+}
