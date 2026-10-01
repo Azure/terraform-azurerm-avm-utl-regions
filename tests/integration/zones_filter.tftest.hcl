@@ -1,5 +1,5 @@
 variables {
-  enable_telemetry = false
+  enable_telemetry       = false
   has_availability_zones = true
 }
 

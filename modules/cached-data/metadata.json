@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-verified-modules-tools/main/src/Avm.Authoring/Resources/Schemas/v1/avm-module-metadata.schema.json",
+  "moduleDisplayName": "Cached data submodule",
+  "moduleDescription": "This submodule is used to cache data in a local file. It is now in a submodule to enable mocking in tests.",
+  "canonicalType": "helper"
+}
