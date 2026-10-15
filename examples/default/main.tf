@@ -8,5 +8,6 @@ terraform {
 module "regions" {
   source = "../../"
 
+  location         = var.location
   enable_telemetry = var.enable_telemetry
 }

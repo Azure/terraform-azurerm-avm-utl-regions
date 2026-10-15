@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test geography filter with mocked data
 override_module {
@@ -117,6 +121,9 @@ run "geography_filter_united_states" {
     condition     = contains(keys(local.regions_by_geography), "United States")
     error_message = "regions_by_geography should contain 'United States' key"
   }
+  variables {
+    location = "eastus"
+  }
 }
 
 run "geography_filter_europe" {
@@ -124,6 +131,7 @@ run "geography_filter_europe" {
 
   variables {
     geography_filter = "Europe"
+    location         = "eastus"
   }
 
   assert {
@@ -147,6 +155,7 @@ run "geography_filter_nonexistent" {
 
   variables {
     geography_filter = "NonexistentGeography"
+    location         = "eastus"
   }
 
   assert {
@@ -165,6 +174,7 @@ run "no_geography_filter" {
 
   variables {
     geography_filter = null
+    location         = "eastus"
   }
 
   assert {

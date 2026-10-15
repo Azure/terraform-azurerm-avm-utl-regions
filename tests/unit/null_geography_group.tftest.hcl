@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # This contains regions with null for geography_group and geography
 override_module {
@@ -96,5 +100,8 @@ run "apply" {
   assert {
     error_message = "Regions by geography should only have one entry"
     condition     = length(local.regions_by_geography) == 1
+  }
+  variables {
+    location = "eastus"
   }
 }
