@@ -1,6 +1,7 @@
 variables {
   enable_telemetry       = false
   has_availability_zones = true
+  location               = "eastus"
 }
 
 run "cached" {

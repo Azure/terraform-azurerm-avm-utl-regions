@@ -1,6 +1,7 @@
 variables {
   enable_telemetry       = false
   geography_group_filter = "Europe"
+  location               = "eastus"
 }
 
 run "cached" {
