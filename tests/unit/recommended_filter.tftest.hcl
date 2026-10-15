@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test recommended filter (tri-state: true/false/null)
 override_module {
@@ -117,6 +121,7 @@ run "is_recommended_true" {
 
   variables {
     is_recommended = true
+    location       = "eastus"
   }
 
   assert {
@@ -155,6 +160,7 @@ run "is_recommended_false" {
 
   variables {
     is_recommended = false
+    location       = "eastus"
   }
 
   assert {
@@ -193,6 +199,7 @@ run "is_recommended_null" {
 
   variables {
     is_recommended = null
+    location       = "eastus"
   }
 
   assert {

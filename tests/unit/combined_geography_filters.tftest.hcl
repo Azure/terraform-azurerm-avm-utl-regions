@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test combining geography and geography group filters
 override_module {
@@ -124,6 +128,7 @@ run "geography_and_geography_group_both_match" {
   variables {
     geography_filter       = "Europe"
     geography_group_filter = "Europe"
+    location               = "eastus"
   }
 
   assert {
@@ -153,6 +158,7 @@ run "geography_and_geography_group_no_intersection" {
   variables {
     geography_filter       = "United States"
     geography_group_filter = "Europe"
+    location               = "eastus"
   }
 
   assert {
@@ -167,6 +173,7 @@ run "geography_filter_with_multiple_geography_groups" {
   variables {
     geography_filter       = null
     geography_group_filter = "Europe"
+    location               = "eastus"
   }
 
   assert {
@@ -196,6 +203,7 @@ run "geography_filter_different_from_geography_group" {
   variables {
     geography_filter       = "United Kingdom"
     geography_group_filter = "Europe"
+    location               = "eastus"
   }
 
   assert {

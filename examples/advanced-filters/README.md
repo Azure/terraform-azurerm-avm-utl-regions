@@ -12,6 +12,7 @@ terraform {
 module "regions_not_recommended_regions_without_azs" {
   source = "../../"
 
+  location               = var.location
   enable_telemetry       = var.enable_telemetry
   has_availability_zones = false
   is_recommended         = false
@@ -20,6 +21,7 @@ module "regions_not_recommended_regions_without_azs" {
 module "regions_recommended_regions_with_azs" {
   source = "../../"
 
+  location               = var.location
   enable_telemetry       = var.enable_telemetry
   has_availability_zones = true
   has_pair               = true
@@ -57,6 +59,14 @@ If it is set to false, then no telemetry will be collected.
 Type: `bool`
 
 Default: `true`
+
+### <a name="input_location"></a> [location](#input\_location)
+
+Description: The Azure region for this module's resources or telemetry deployment.
+
+Type: `string`
+
+Default: `"eastus"`
 
 ## Outputs
 
