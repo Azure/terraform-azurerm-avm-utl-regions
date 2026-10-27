@@ -6,7 +6,7 @@ This example shows a more advanced scenario where you want to randomly pick two 
 
 ```hcl
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 
   required_providers {
     random = {
@@ -36,7 +36,7 @@ resource "random_shuffle" "two_us_region_names_with_zones" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.6)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 - <a name="requirement_random"></a> [random](#requirement\_random) (~> 3.6)
 

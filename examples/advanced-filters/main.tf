@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 }
 
 module "regions_not_recommended_regions_without_azs" {
