@@ -6,7 +6,7 @@ This example shows how to select a region at random.
 
 ```hcl
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 
   required_providers {
     random = {
@@ -35,7 +35,7 @@ resource "random_integer" "region_index" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.6)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 - <a name="requirement_random"></a> [random](#requirement\_random) (~> 3.6)
 

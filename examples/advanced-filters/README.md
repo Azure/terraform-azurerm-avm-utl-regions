@@ -6,7 +6,7 @@ In this example we disable the previous recommended filter (to get the full set 
 
 ```hcl
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 }
 
 module "regions_not_recommended_regions_without_azs" {
@@ -35,7 +35,7 @@ module "regions_recommended_regions_with_azs" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.6)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 ## Resources
 
