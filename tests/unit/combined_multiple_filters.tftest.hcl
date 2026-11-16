@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test combining multiple filters: geography, recommended, and region filters
 override_module {
@@ -124,6 +128,7 @@ run "geography_recommended_region_all_match" {
     geography_filter = "United States"
     is_recommended   = true
     region_filter    = ["eastus", "westus"]
+    location         = "eastus"
   }
 
   assert {
@@ -159,6 +164,7 @@ run "geography_recommended_region_partial_match" {
     geography_filter = "United States"
     is_recommended   = true
     region_filter    = ["eastus", "northeurope"] # northeurope not in US
+    location         = "eastus"
   }
 
   assert {
@@ -189,6 +195,7 @@ run "geography_recommended_region_no_match" {
     geography_filter = "United States"
     is_recommended   = false                # Only non-recommended
     region_filter    = ["eastus", "westus"] # But these are recommended
+    location         = "eastus"
   }
 
   assert {
@@ -205,6 +212,7 @@ run "geography_not_recommended_with_region" {
     is_recommended     = false
     recommended_filter = false # needed to avoid filtering out non-recommended regions
     region_filter      = ["centraluseuap"]
+    location           = "eastus"
   }
 
   assert {
@@ -235,6 +243,7 @@ run "all_filters_null_except_region" {
     geography_filter = null
     is_recommended   = null
     region_filter    = ["eastus", "northeurope"]
+    location         = "eastus"
   }
 
   assert {
@@ -260,6 +269,7 @@ run "complex_intersection_with_display_names" {
     geography_filter = "United States"
     is_recommended   = true
     region_filter    = ["East US", "West US", "North Europe"] # Mix of display names
+    location         = "eastus"
   }
 
   assert {

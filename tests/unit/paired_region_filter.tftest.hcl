@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test paired region filter (tri-state: true/false/null)
 override_module {
@@ -106,6 +110,7 @@ run "has_pair_true" {
 
   variables {
     has_pair = true
+    location = "eastus"
   }
 
   assert {
@@ -144,6 +149,7 @@ run "has_pair_false" {
 
   variables {
     has_pair = false
+    location = "eastus"
   }
 
   assert {
@@ -182,6 +188,7 @@ run "has_pair_null" {
 
   variables {
     has_pair = null
+    location = "eastus"
   }
 
   assert {
@@ -201,6 +208,7 @@ run "paired_region_names_correct" {
 
   variables {
     has_pair = true
+    location = "eastus"
   }
 
   assert {

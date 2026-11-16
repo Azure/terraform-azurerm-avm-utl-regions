@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 
   required_providers {
   }
@@ -8,5 +8,6 @@ terraform {
 module "regions" {
   source = "../../"
 
+  location         = var.location
   enable_telemetry = var.enable_telemetry
 }

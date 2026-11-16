@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test all filters combined to verify comprehensive set intersection logic
 override_module {
@@ -152,6 +156,7 @@ run "all_filters_comprehensive_match" {
     has_pair               = true
     is_recommended         = true
     region_filter          = ["eastus", "westus", "westeurope"]
+    location               = "eastus"
   }
 
   assert {
@@ -200,6 +205,7 @@ run "all_filters_no_match" {
     has_pair               = true
     is_recommended         = true
     region_filter          = ["eastus"]
+    location               = "eastus"
   }
 
   assert {
@@ -218,6 +224,7 @@ run "all_filters_relaxed_match" {
     has_pair               = true
     is_recommended         = true
     region_filter          = null
+    location               = "eastus"
   }
 
   assert {
@@ -261,6 +268,7 @@ run "all_filters_null_should_return_all" {
     has_pair               = null
     is_recommended         = null
     region_filter          = null
+    location               = "eastus"
   }
 
   assert {
@@ -276,6 +284,7 @@ run "filtered_outputs_consistency" {
   variables {
     geography_group_filter = "Europe"
     is_recommended         = true
+    location               = "eastus"
   }
 
   assert {

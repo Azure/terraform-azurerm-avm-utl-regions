@@ -6,12 +6,13 @@ In this example we disable the previous recommended filter (to get the full set 
 
 ```hcl
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 }
 
 module "regions_not_recommended_regions_without_azs" {
   source = "../../"
 
+  location               = var.location
   enable_telemetry       = var.enable_telemetry
   has_availability_zones = false
   is_recommended         = false
@@ -20,6 +21,7 @@ module "regions_not_recommended_regions_without_azs" {
 module "regions_recommended_regions_with_azs" {
   source = "../../"
 
+  location               = var.location
   enable_telemetry       = var.enable_telemetry
   has_availability_zones = true
   has_pair               = true
@@ -33,7 +35,7 @@ module "regions_recommended_regions_with_azs" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.6)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 ## Resources
 
@@ -57,6 +59,14 @@ If it is set to false, then no telemetry will be collected.
 Type: `bool`
 
 Default: `true`
+
+### <a name="input_location"></a> [location](#input\_location)
+
+Description: The Azure region for this module's resources or telemetry deployment.
+
+Type: `string`
+
+Default: `"eastus"`
 
 ## Outputs
 

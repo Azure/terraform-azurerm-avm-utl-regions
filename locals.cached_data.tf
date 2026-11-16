@@ -8,7 +8,7 @@ locals {
       name               = location.name
       paired_region_name = try(one(location.metadata.pairedRegion).name, null)
       recommended        = location.metadata.regionCategory == "Recommended"
-      zones              = try([for zone in location.availabilityZoneMappings : tonumber(zone.logicalZone)], tolist(null))
+      zones              = tolist([for zone in try(location.availabilityZoneMappings, []) : tonumber(zone.logicalZone)])
     } if location.metadata.regionType == "Physical"
   ])
 }

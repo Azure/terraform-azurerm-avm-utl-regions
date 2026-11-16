@@ -6,7 +6,7 @@ This example shows a more advanced scenario where you want to randomly pick two 
 
 ```hcl
 terraform {
-  required_version = "~> 1.6"
+  required_version = ">= 1.9.0, < 2.0.0"
 
   required_providers {
     random = {
@@ -19,6 +19,7 @@ terraform {
 module "regions" {
   source = "../../"
 
+  location               = var.location
   enable_telemetry       = var.enable_telemetry
   geography_filter       = "United States"
   has_availability_zones = true
@@ -35,7 +36,7 @@ resource "random_shuffle" "two_us_region_names_with_zones" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.6)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
 
 - <a name="requirement_random"></a> [random](#requirement\_random) (~> 3.6)
 
@@ -63,6 +64,14 @@ If it is set to false, then no telemetry will be collected.
 Type: `bool`
 
 Default: `true`
+
+### <a name="input_location"></a> [location](#input\_location)
+
+Description: The Azure region for this module's resources or telemetry deployment.
+
+Type: `string`
+
+Default: `"eastus"`
 
 ## Outputs
 

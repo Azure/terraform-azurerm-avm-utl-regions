@@ -29,7 +29,7 @@ locals {
 # has availability zones can be set to true, false or null.
 locals {
   locations_final_availability_zones_filter  = var.has_availability_zones == null ? local.locations_all_names : var.has_availability_zones ? local.locations_has_availability_zones_filter : local.locations_no_has_availability_zones_filter
-  locations_has_availability_zones_filter    = toset([for v in local.locations : v.name if v.zones != null])
+  locations_has_availability_zones_filter    = toset([for v in local.locations : v.name if length(v.zones) > 0])
   locations_no_has_availability_zones_filter = setsubtract(local.locations_all_names, local.locations_has_availability_zones_filter)
 }
 

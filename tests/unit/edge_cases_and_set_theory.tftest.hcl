@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test edge cases and set theory edge conditions
 override_module {
@@ -68,6 +72,7 @@ run "empty_set_intersection" {
   variables {
     geography_filter = "NonexistentGeography"
     region_filter    = ["eastus"] # eastus exists but not in nonexistent geography
+    location         = "eastus"
   }
 
   assert {
@@ -98,6 +103,7 @@ run "null_geography_and_geography_group_handling" {
     geography_filter       = null
     geography_group_filter = null
     recommended_filter     = false # disable legacy filter
+    location               = "eastus"
   }
 
   assert {
@@ -121,6 +127,7 @@ run "filter_null_geography_explicitly" {
 
   variables {
     geography_filter = "United States"
+    location         = "eastus"
   }
 
   assert {
@@ -144,6 +151,7 @@ run "filter_null_geography_group_explicitly" {
 
   variables {
     geography_group_filter = "US"
+    location               = "eastus"
   }
 
   assert {
@@ -167,6 +175,7 @@ run "region_filter_case_sensitivity" {
 
   variables {
     region_filter = ["EASTUS", "East US"] # Test case sensitivity and display name
+    location      = "eastus"
   }
 
   # Assuming the filter is case-sensitive and exact match
@@ -186,6 +195,7 @@ run "region_filter_exact_name_match" {
 
   variables {
     region_filter = ["eastus"]
+    location      = "eastus"
   }
 
   assert {
@@ -209,6 +219,7 @@ run "set_theory_validation_all_sets_defined" {
     has_pair               = true
     is_recommended         = true
     region_filter          = ["eastus"]
+    location               = "eastus"
   }
 
   # Validate that all the intermediate sets are properly created
@@ -258,6 +269,7 @@ run "validate_output_sorting" {
 
   variables {
     # No filters to get all regions
+    location = "eastus"
   }
 
   assert {

@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test region filter (set of region names or display names)
 override_module {
@@ -122,6 +126,7 @@ run "region_filter_by_names" {
 
   variables {
     region_filter = ["eastus", "northeurope"]
+    location      = "eastus"
   }
 
   assert {
@@ -155,6 +160,7 @@ run "region_filter_by_display_names" {
 
   variables {
     region_filter = ["East US", "West Europe"]
+    location      = "eastus"
   }
 
   assert {
@@ -188,6 +194,7 @@ run "region_filter_mixed_names_and_display_names" {
 
   variables {
     region_filter = ["eastus", "West Europe"]
+    location      = "eastus"
   }
 
   assert {
@@ -211,6 +218,7 @@ run "region_filter_single_region" {
 
   variables {
     region_filter = ["westus"]
+    location      = "eastus"
   }
 
   assert {
@@ -229,6 +237,7 @@ run "region_filter_nonexistent" {
 
   variables {
     region_filter = ["nonexistentregion", "anothernonexistent"]
+    location      = "eastus"
   }
 
   assert {
@@ -242,6 +251,7 @@ run "region_filter_partial_match" {
 
   variables {
     region_filter = ["eastus", "nonexistentregion"]
+    location      = "eastus"
   }
 
   assert {
@@ -260,6 +270,7 @@ run "region_filter_null" {
 
   variables {
     region_filter = null
+    location      = "eastus"
   }
 
   assert {
@@ -274,6 +285,7 @@ run "valid_region_names_with_filter" {
 
   variables {
     region_filter = ["eastus", "northeurope"]
+    location      = "eastus"
   }
 
   assert {

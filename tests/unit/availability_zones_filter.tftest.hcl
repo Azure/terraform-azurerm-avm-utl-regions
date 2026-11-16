@@ -1,6 +1,10 @@
-mock_provider "azapi" {}
-mock_provider "modtm" {}
-mock_provider "random" {}
+mock_provider "azapi" {
+  mock_data "azapi_client_config" {
+    defaults = {
+      subscription_resource_id = "/subscriptions/00000000-0000-0000-0000-000000000000"
+    }
+  }
+}
 
 # Test availability zones filter (tri-state: true/false/null)
 override_module {
@@ -134,6 +138,7 @@ run "has_availability_zones_true" {
 
   variables {
     has_availability_zones = true
+    location               = "eastus"
   }
 
   assert {
@@ -162,6 +167,7 @@ run "has_availability_zones_false" {
 
   variables {
     has_availability_zones = false
+    location               = "eastus"
   }
 
   assert {
@@ -190,6 +196,7 @@ run "has_availability_zones_null" {
 
   variables {
     has_availability_zones = null
+    location               = "eastus"
   }
 
   assert {
