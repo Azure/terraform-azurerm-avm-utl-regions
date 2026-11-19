@@ -10,7 +10,7 @@ It is now in a submodule to enable mocking in tests.
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9.0, < 2.0.0)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.11.0, < 2.0.0)
 
 ## Resources
 
