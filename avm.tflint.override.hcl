@@ -1,4 +1,4 @@
 # Disable as this is a utl module and does not create any resources
-rule "required_output_rmfr7" {
+rule "avm_output_resource_id_required" {
   enabled = false
 }
